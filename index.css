@@ -1,0 +1,1115 @@
+/* 
+   Laelia App Landing Page Stylesheet
+   Design Style: Happy Glassmorphism
+   Base background: Warm Cream (#FAF5EF)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+/* Brand Design Tokens */
+:root {
+  --color-bg-base: #FAF5EF;
+  
+  /* Palette Colors */
+  --color-primary: #C04AA0;        /* Orchid Magenta */
+  --color-primary-dark: #7B3F9E;   /* Royal Orchid */
+  --color-accent: #FF7E9D;         /* Coral Bloom */
+  --color-accent-joy: #FFD166;     /* Sunlit Yellow */
+  --color-success: #34A877;        /* Fresh Leaf */
+  --color-text: #2E1A2E;           /* Deep Aubergine */
+  --color-text-muted: #6E5A6B;     /* Muted Mauve */
+  
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #C04AA0 0%, #E2639E 50%, #FF7E9D 100%);
+  --grad-primary-hover: linear-gradient(135deg, #A8368A 0%, #D14E8A 50%, #E66584 100%);
+  --grad-celebration: linear-gradient(135deg, #FFD166 0%, #FFA852 50%, #FF7E9D 100%);
+  --grad-mesh: 
+    radial-gradient(circle at 15% 15%, rgba(251, 228, 241, 0.75) 0%, transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(243, 233, 255, 0.85) 0%, transparent 45%),
+    radial-gradient(circle at 80% 85%, rgba(255, 243, 221, 0.75) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(251, 228, 241, 0.5) 0%, transparent 45%);
+
+  /* Typography */
+  --font-sans: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  /* Dimensions & Spacing */
+  --header-height: 70px;
+  --container-width: 1100px;
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Reset & Document Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  background-image: var(--grad-mesh);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Glassmorphism System */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  box-shadow: 
+    0 10px 30px -10px rgba(46, 26, 46, 0.06),
+    0 1px 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 24px;
+  box-shadow: 
+    0 12px 35px -10px rgba(46, 26, 46, 0.08),
+    0 24px 50px -20px rgba(123, 63, 158, 0.04),
+    0 1px 2px rgba(255, 255, 255, 0.6) inset;
+  transition: var(--transition-spring);
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 
+    0 20px 40px -10px rgba(46, 26, 46, 0.12),
+    0 30px 60px -15px rgba(123, 63, 158, 0.06),
+    0 1px 2px rgba(255, 255, 255, 0.8) inset;
+}
+
+/* Base Layout Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
+/* Buttons and Badges */
+.app-store-badge {
+  display: inline-block;
+  transition: var(--transition-spring);
+  height: 48px;
+  cursor: pointer;
+}
+
+.app-store-badge img {
+  height: 100%;
+  display: block;
+}
+
+.app-store-badge:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.app-store-badge:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--grad-primary);
+  color: white;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-size: 1rem;
+  box-shadow: 0 8px 24px -6px rgba(192, 74, 160, 0.4);
+  text-shadow: 0 1px 2px rgba(46, 26, 46, 0.35);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--grad-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(192, 74, 160, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Header Section */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 100;
+  transition: var(--transition-smooth);
+}
+
+header.scrolled {
+  background: rgba(250, 245, 239, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 4px 20px -10px rgba(46, 26, 46, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 1.35rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-sans);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(192, 74, 160, 0.2);
+}
+
+.header-cta {
+  display: flex;
+  align-items: center;
+}
+
+.header-cta .app-store-badge {
+  height: 38px;
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-tagline {
+  color: var(--color-primary);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.hero-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.desktop-qr-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.desktop-qr-badge img {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+}
+
+.qr-caption {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+}
+
+.hero-trust-chips {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.trust-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+}
+
+.trust-chip svg {
+  color: var(--color-success);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.hero-meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* CSS iPhone 17 Pro Device Mockup */
+.device-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.iphone-17-pro {
+  position: relative;
+  width: 320px;
+  height: 650px;
+  background: #1c1524;
+  border-radius: 44px;
+  box-shadow: 
+    0 25px 60px -15px rgba(46, 26, 46, 0.25),
+    0 10px 30px -10px rgba(123, 63, 158, 0.15),
+    inset 0 0 4px 2px rgba(255, 255, 255, 0.15),
+    0 0 0 10px #2E1A2E; /* Phone frame rim */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(-6deg) rotateX(4deg);
+  transition: transform 0.5s ease;
+}
+
+.iphone-17-pro:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+/* Screen bezel container */
+.phone-screen {
+  position: relative;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: #FAF5EF;
+  border-radius: 40px;
+  overflow: hidden;
+  border: 4px solid #000;
+}
+
+/* Dynamic Island */
+.dynamic-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 26px;
+  background: #000;
+  border-radius: 13px;
+  z-index: 10;
+  box-shadow: inset 0 0.5px 1px rgba(255,255,255,0.2);
+}
+
+/* Content wrapper inside phone screen */
+.phone-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.phone-content img, 
+.phone-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video custom play/pause overlay */
+.video-overlay {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  background: rgba(46, 26, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: var(--transition-smooth);
+}
+
+.video-overlay:hover {
+  background: rgba(46, 26, 46, 0.8);
+  transform: scale(1.1);
+}
+
+/* The Wedge Section */
+.wedge {
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-label {
+  color: var(--color-primary);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.wedge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.wedge-card {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.wedge-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.wedge-card:nth-child(1) .wedge-icon-box {
+  background: linear-gradient(135deg, #C04AA0, #FF7E9D);
+}
+
+.wedge-card:nth-child(2) .wedge-icon-box {
+  background: linear-gradient(135deg, #7B3F9E, #C04AA0);
+}
+
+.wedge-card:nth-child(3) .wedge-icon-box {
+  background: linear-gradient(135deg, #34A877, #72c69d);
+}
+
+.wedge-title {
+  font-size: 1.35rem;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+/* Feature Highlights */
+.features {
+  padding-bottom: 60px;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.feature-row:last-child {
+  margin-bottom: 0;
+}
+
+.feature-row.reverse .feature-visual {
+  order: -1;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(123, 63, 158, 0.08);
+  padding: 6px 16px;
+  border-radius: 99px;
+  width: fit-content;
+}
+
+.feature-icon-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.feature-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.feature-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.feature-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.feature-bullets li {
+  display: flex;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.feature-bullets li svg {
+  color: var(--color-success);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Rebloom Celebration Section specific */
+.rebloom-row {
+  padding: 40px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 15px 45px -15px rgba(255, 126, 157, 0.12),
+    0 30px 60px -25px rgba(255, 209, 102, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.rebloom-serif-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.75rem;
+  background: var(--grad-celebration);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Confetti Petal animations inside custom mockup */
+.celebration-bg {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #FAF5EF 0%, #FFF5FB 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.bloom-card-graphic {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(123, 63, 158, 0.1);
+  border: 1px solid rgba(192, 74, 160, 0.1);
+  width: 100%;
+  max-width: 220px;
+  transform: translateY(10px);
+  z-index: 3;
+}
+
+.bloom-badge {
+  background: var(--grad-celebration);
+  color: #2E1A2E;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 99px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.bloom-plant-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.bloom-plant-sub {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+.bloom-celebration-message {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+}
+
+/* Petals Falling inside simulator mock */
+.petals-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.petal {
+  position: absolute;
+  top: -20px;
+  background: var(--color-accent);
+  border-radius: 50% 0 50% 50%;
+  opacity: 0.7;
+  transform-origin: center;
+  animation: petal-fall 8s linear infinite;
+}
+
+.petal:nth-child(2n) {
+  background: var(--color-accent-joy);
+  border-radius: 50%;
+}
+
+.petal:nth-child(3n) {
+  background: var(--color-primary);
+  border-radius: 50% 50% 0 50%;
+}
+
+/* Privacy Section */
+.privacy-band {
+  padding: 80px 0;
+}
+
+.privacy-card {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.privacy-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.privacy-title {
+  font-size: 2.25rem;
+  color: var(--color-text);
+}
+
+.privacy-body {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.privacy-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.privacy-stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(46, 26, 46, 0.02);
+}
+
+.privacy-stat-pill svg {
+  color: var(--color-primary);
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* Pricing Section */
+.pricing {
+  padding-top: 60px;
+}
+
+.pricing-card {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--grad-primary);
+}
+
+.pricing-title {
+  font-size: 2.25rem;
+  margin-bottom: 30px;
+}
+
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.pricing-tier {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 18px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tier-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tier-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+}
+
+.tier-price {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.tier-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tier-features li {
+  display: flex;
+  gap: 8px;
+  color: var(--color-text-muted);
+}
+
+.tier-features li svg {
+  color: var(--color-success);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.pricing-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.pricing-note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+/* Final Call To Action */
+.final-cta {
+  padding-bottom: 120px;
+}
+
+.final-cta-card {
+  padding: 80px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background light glow */
+.final-cta-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(192, 74, 160, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.final-cta-title {
+  font-size: 3rem;
+  max-width: 650px;
+  line-height: 1.15;
+  z-index: 2;
+}
+
+.final-cta-badge {
+  z-index: 2;
+  height: 52px;
+}
+
+/* Footer Section */
+footer {
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(250, 245, 239, 0.4);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+}
+
+.footer-tagline {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.footer-links a {
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+.footer-maker {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+}
+
+/* Scroll Trigger Animations (JS Assisted) */
+/* Only hide-then-reveal when JS is present — otherwise content must stay visible */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html.js .reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 968px) {
+  h2 {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 70px 0;
+  }
+  
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .hero-cta-row {
+    justify-content: center;
+  }
+  
+  .hero-trust-chips {
+    justify-content: center;
+  }
+  
+  .device-container {
+    order: -1;
+  }
+  
+  .iphone-17-pro {
+    transform: none;
+    width: 290px;
+    height: 590px;
+  }
+  
+  .wedge-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .feature-icon-badge {
+    margin: 0 auto;
+  }
+  
+  .feature-bullets {
+    align-items: center;
+  }
+  
+  .feature-bullets li {
+    text-align: left;
+  }
+  
+  .feature-row.reverse .feature-visual {
+    order: 0;
+  }
+  
+  .privacy-card {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 24px;
+  }
+  
+  .pricing-tiers {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .final-cta-title {
+    font-size: 2.25rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .rebloom-serif-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* A QR code is pointless on the phone you'd scan it with — desktop only */
+@media (max-width: 768px) {
+  .desktop-qr-badge {
+    display: none;
+  }
+}
+
+/* Respect users who ask for less motion: no reveal slide, no falling petals,
+   no device tilt, and pause the looping hero video's transforms. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .iphone-17-pro,
+  .iphone-17-pro:hover {
+    transform: none;
+  }
+
+  .petals-container {
+    display: none;
+  }
+}
