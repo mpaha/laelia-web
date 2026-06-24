@@ -1,0 +1,21 @@
+{
+  "name": "Laelia — Orchid Care & ID",
+  "short_name": "Laelia",
+  "description": "The happy, private companion for orchid lovers. Read your plant's health, identify genus and species, and celebrate every rebloom.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF5EF",
+  "theme_color": "#FAF5EF",
+  "categories": ["lifestyle", "education", "productivity"],
+  "icons": [
+    {
+      "src": "/assets/laelia-orchid-care-id.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -8,486 +8,824 @@
   <script>document.documentElement.classList.add('js');</script>
 
   <!-- Primary Meta Tags -->
-  <title>Laelia — Orchid Care & ID</title>
-  <meta name="title" content="Laelia — Orchid Care & ID">
-  <meta name="description" content="Laelia is the happy, private companion for people who love orchids. Get honest reads of your plant's roots, leaves, and spikes, and celebrate every rebloom. No subscriptions, ever.">
-  <meta name="keywords" content="orchid care, orchid identification, orchid app, flower care, houseplant journal, Phalaenopsis care, plant diagnosis">
-  <meta name="author" content="Piglo Boutique">
-  <meta name="robots" content="index, follow">
+  <title>Laelia — Orchid Care &amp; ID App for iPhone</title>
+  <meta name="title" content="Laelia — Orchid Care &amp; ID App for iPhone">
+  <meta name="description" content="Laelia is the happy, private iPhone app for orchid lovers. Get honest reads of your plant's roots, leaves, and spikes, identify genus and species, and celebrate every rebloom. Free to try — no subscription, ever.">
+  <meta name="keywords" content="orchid care app, orchid identification, orchid ID, Phalaenopsis care, orchid diagnosis app, how to rebloom orchid, orchid app iPhone, houseplant journal">
+  <meta name="author" content="PigloBoutique Ltd">
+  <meta name="publisher" content="PigloBoutique Ltd">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#FAF5EF">
+  <meta name="apple-mobile-web-app-title" content="Laelia">
   <link rel="canonical" href="https://laelia.app/">
 
-  <!-- Favicon -->
+  <!-- iOS Smart App Banner: native "View / Open" banner in Safari on iOS -->
+  <meta name="apple-itunes-app" content="app-id=6782402415">
+
+  <!-- Favicon, touch icon, web manifest -->
   <link rel="icon" type="image/png" href="assets/laelia-orchid-care-id.png">
   <link rel="apple-touch-icon" href="assets/laelia-orchid-care-id.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <!-- Open Graph / Facebook (absolute URLs required by scrapers) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Laelia">
+  <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://laelia.app/">
-  <meta property="og:title" content="Laelia — Orchid Care & ID">
-  <meta property="og:description" content="The happy, private companion for orchid lovers. Read your plant's health, identify genus and species, and celebrate the rebloom.">
+  <meta property="og:title" content="Laelia — Orchid Care &amp; ID">
+  <meta property="og:description" content="The happy, private companion for orchid lovers. Read your plant's health, identify genus and species, and celebrate the rebloom. Free to try — no subscription, ever.">
   <meta property="og:image" content="https://laelia.app/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Laelia — the orchid care and identification app for iPhone.">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://laelia.app/">
-  <meta name="twitter:title" content="Laelia — Orchid Care & ID">
+  <meta name="twitter:title" content="Laelia — Orchid Care &amp; ID">
   <meta name="twitter:description" content="The happy, private companion for orchid lovers. Read your plant's health, identify genus and species, and celebrate the rebloom.">
   <meta name="twitter:image" content="https://laelia.app/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="Laelia — the orchid care and identification app for iPhone.">
 
-  <!-- Structured data: helps the App Store result + rich previews -->
+  <!-- Fonts: preconnect + non-blocking load so the stylesheet never waits on fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap">
+  </noscript>
+
+  <!-- Preload the hero poster (likely LCP) -->
+  <link rel="preload" as="image" href="screenshots/video_poster.webp" fetchpriority="high">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="index.css">
+
+  <!-- Structured data: one @graph for Organization, WebSite, the app, and the FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Laelia: Orchid Care & ID",
-    "operatingSystem": "iOS",
-    "applicationCategory": "LifestyleApplication",
-    "description": "A happy, private companion for orchid lovers — read your plant's roots, leaves, and spikes, identify genus and species, and celebrate the rebloom. No subscription, ever.",
-    "url": "https://laelia.app/",
-    "downloadUrl": "https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415",
-    "image": "https://laelia.app/assets/og-image.jpg",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Piglo Boutique"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://laelia.app/#publisher",
+        "name": "PigloBoutique Ltd",
+        "url": "https://www.pigloboutique.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://laelia.app/assets/laelia-orchid-care-id.png",
+          "width": 1024,
+          "height": 1024
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://laelia.app/#website",
+        "url": "https://laelia.app/",
+        "name": "Laelia — Orchid Care & ID",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://laelia.app/#publisher" }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://laelia.app/#app",
+        "name": "Laelia: Orchid Care & ID",
+        "operatingSystem": "iOS",
+        "applicationCategory": "LifestyleApplication",
+        "applicationSubCategory": "Orchid care and plant identification",
+        "url": "https://laelia.app/",
+        "downloadUrl": "https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415",
+        "installUrl": "https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415",
+        "image": "https://laelia.app/assets/og-image.jpg",
+        "screenshot": [
+          "https://laelia.app/screenshots/shot_191431.webp",
+          "https://laelia.app/screenshots/shot_191345.webp",
+          "https://laelia.app/screenshots/shot_191448.webp"
+        ],
+        "inLanguage": "en",
+        "description": "Laelia is a happy, private iOS app for orchid lovers. Read your plant's roots, leaves, and spikes with honest, calibrated confidence, identify genus and species, keep a private growth journal, and celebrate every rebloom. Free to try, with a one-time $29.99 Lifetime Unlock and no subscription.",
+        "featureList": [
+          "Read my plant: honest diagnosis of roots, leaves, and spikes with calibrated confidence",
+          "Orchid ID: genus and species identification from a photo",
+          "Growth journal: a private, local-first photo timeline for each plant",
+          "Celebrate the rebloom: spike tracking and an in-app celebration",
+          "Genus-aware care for Phalaenopsis, Cattleya, Dendrobium, Vanda, and Oncidium"
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "USD",
+          "lowPrice": "0",
+          "highPrice": "29.99",
+          "offerCount": "2"
+        },
+        "publisher": { "@id": "https://laelia.app/#publisher" },
+        "author": { "@id": "https://laelia.app/#publisher" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://laelia.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Laelia free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Laelia is free to download and free to use for up to 2 orchids, with the full experience: orchid ID, the read-my-plant diagnosis, genus-aware care, and the growth journal. A one-time $29.99 Lifetime Unlock adds unlimited orchids. There is no subscription."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Laelia have a subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Laelia never charges a subscription. The only paid option is a single one-time $29.99 Lifetime Unlock for unlimited orchids — pay once and it is yours, restorable across your Apple devices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which orchids can Laelia identify and care for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Laelia provides genus-aware care for popular orchids including Phalaenopsis, Cattleya, Dendrobium, Vanda, and Oncidium, and identifies the likely genus and species from a photo with honestly calibrated uncertainty."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — privacy is literal here. Your collection, names, journal entries, and growth photos stay on your device. A photo you send for a read is sent anonymously with location and metadata stripped, is never stored, and is never used to train AI. No account, no tracking, no ads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Laelia work on Android?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not yet. Laelia is currently available for iPhone on the App Store."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the read-my-plant diagnosis work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Photograph the roots, leaves, or a flower spike. Laelia shows you what it sees, what it likely means, how to confirm it, and what to do — and always displays how confident it is instead of bluffing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often should I water an orchid?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Water by observation, not a fixed schedule. For most Phalaenopsis, water when the bark mix is nearly dry and the roots look silvery rather than green. Watering on a rigid weekly calendar is the most common cause of orchid root rot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get my orchid to rebloom?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Keep the plant healthy with bright, indirect light and steady care. Many Phalaenopsis are nudged into a new spike by a slight night-time temperature drop of about 5–8°C (10–15°F) for a few weeks. Laelia tracks spike development and celebrates the bloom."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Sticky Slim Header -->
   <header id="main-header">
     <div class="container">
-      <a href="#" class="logo">
-        <img class="logo-icon" src="assets/laelia-orchid-care-id.png" alt="Laelia Orchid Icon">
+      <a href="#" class="logo" aria-label="Laelia — home">
+        <img class="logo-icon" src="assets/laelia-orchid-care-id.png" alt="" width="34" height="34">
         <span>Laelia</span>
       </a>
-      <div class="header-cta">
-        <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&itsct=apps_box_link&mttnsubad=6782402415" class="app-store-badge">
-          <img src="assets/black.svg" alt="Download on the App Store">
+      <nav class="header-cta" aria-label="Primary">
+        <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&amp;itsct=apps_box_link&amp;mttnsubad=6782402415" class="app-store-badge" aria-label="Download Laelia on the App Store">
+          <img src="assets/black.svg" alt="Download on the App Store" width="120" height="40">
         </a>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-tagline">Now Available for iOS</div>
-        <h1 class="hero-title">Learn to read your orchid. <br>Celebrate every rebloom.</h1>
-        <p class="hero-subtitle">Laelia is the happy, private companion for people who love orchids — honest reads of your plant's roots, leaves, and spikes, and a real celebration when the bloom arrives.</p>
-        
-        <div class="hero-cta-wrapper">
-          <div class="hero-cta-row">
-            <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&itsct=apps_box_link&mttnsubad=6782402415" class="app-store-badge">
-              <img src="assets/black.svg" style="height: 48px;" alt="Download on the App Store">
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline"><span class="dot" aria-hidden="true"></span> Now available for iPhone</span>
+          <h1 class="hero-title" id="hero-title">Learn to read your orchid. <br>Celebrate every <span class="text-gradient">rebloom.</span></h1>
+          <p class="hero-subtitle">Laelia is the happy, private companion for people who love orchids — honest reads of your plant's roots, leaves, and spikes, and a real celebration when the bloom arrives.</p>
+
+          <div class="hero-cta-wrapper">
+            <div class="hero-cta-row">
+              <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&amp;itsct=apps_box_link&amp;mttnsubad=6782402415" class="app-store-badge" aria-label="Download Laelia on the App Store">
+                <img src="assets/black.svg" alt="Download on the App Store" width="135" height="54">
+              </a>
+              <!-- Desktop only QR code to bridge download -->
+              <div class="desktop-qr-badge">
+                <img src="assets/qr-code.png" alt="QR code linking to Laelia on the App Store" width="42" height="42">
+                <div class="qr-caption">Scan to<br>download</div>
+              </div>
+            </div>
+
+            <div class="hero-trust-chips">
+              <div class="trust-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                <span>No subscription, ever</span>
+              </div>
+              <div class="trust-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                <span>Your data stays on your phone</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="hero-meta">Free to try · One-time $29.99 Lifetime Unlock · iPhone</p>
+        </div>
+
+        <!-- Interactive Video Mockup -->
+        <div class="device-container">
+          <div class="iphone-17-pro">
+            <div class="phone-screen">
+              <div class="dynamic-island"></div>
+              <div class="phone-content">
+                <video id="hero-video" autoplay muted loop playsinline preload="metadata" width="620" height="1344" poster="screenshots/video_poster.webp">
+                  <source src="screenshots/Laelia_hero.mp4" type="video/mp4">
+                  <source src="screenshots/Laelia_hero.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+                <button class="video-overlay" id="video-control" type="button" aria-label="Pause preview video">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" id="play-icon" style="display:none;" aria-hidden="true">
+                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" id="pause-icon" aria-hidden="true">
+                    <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Wedge Section -->
+    <section class="wedge cv-auto" id="why-laelia" aria-labelledby="wedge-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Not another plant scheduler</span>
+          <h2 id="wedge-heading">Why Laelia is different</h2>
+          <p class="section-subtitle">Most plant apps treat orchids like desert cacti or generic houseplants. Laelia is built from the ground up for the unique needs of orchid enthusiasts.</p>
+        </div>
+
+        <div class="wedge-grid">
+          <div class="glass-card wedge-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="wedge-title">Teach, don't oracle</h3>
+            <p>Laelia shows you what it sees, what it likely means, how to confirm it, and how confident it is — instead of barking "water now."</p>
+          </div>
+
+          <div class="glass-card wedge-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="wedge-title">Observation, not a calendar</h3>
+            <p>Rigid "water every Tuesday" reminders are what kill orchids. Laelia helps you read the plant, not obey an alarm.</p>
+          </div>
+
+          <div class="glass-card wedge-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="wedge-title">Built for enthusiasts</h3>
+            <p>Care that actually differs by genus — Phalaenopsis, Cattleya, Dendrobium, Vanda, Oncidium — not one generic schedule.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="features cv-auto" id="features" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">What Laelia does</h2>
+      <div class="container">
+
+        <!-- Feature 1: Read my plant -->
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Read my plant
+            </span>
+            <h2 class="feature-title">An honest, expert read of your plant.</h2>
+            <p class="feature-description">Photograph roots, leaves, or a spike for an expert read: what's there, what it likely means, how to confirm, and what to do. Confidence is always displayed honestly, never faked.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Diagnose roots, leaves, spikes, or the whole plant
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Shows its confidence — and admits when it's unsure
+              </li>
+            </ul>
+          </div>
+          <div class="feature-visual device-container">
+            <div class="iphone-17-pro">
+              <div class="phone-screen">
+                <div class="dynamic-island"></div>
+                <div class="phone-content">
+                  <img src="screenshots/shot_191431.webp" width="640" height="1386" loading="lazy" decoding="async" alt="Laelia diagnosis screen — choosing roots, leaves, or spike for a read">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: Orchid ID -->
+        <div class="feature-row reverse reveal">
+          <div class="feature-text">
+            <span class="feature-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              Orchid ID
+            </span>
+            <h2 class="feature-title">Genus and species identification.</h2>
+            <p class="feature-description">Snap a photo for the likely genus and species, calibrated with uncertainty. It never bluffs a cultivar — you get clear, honest guidance on what your orchid is and how to verify it.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Differentiates care routines by genus
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Clear, honest ways to confirm what you've got
+              </li>
+            </ul>
+          </div>
+          <div class="feature-visual device-container">
+            <div class="iphone-17-pro">
+              <div class="phone-screen">
+                <div class="dynamic-island"></div>
+                <div class="phone-content">
+                  <img src="screenshots/shot_191345.webp" width="640" height="1386" loading="lazy" decoding="async" alt="Laelia add-orchid screen with genus picker">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3: Growth journal -->
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              Growth journal
+            </span>
+            <h2 class="feature-title">Your orchid's scrapbook.</h2>
+            <p class="feature-description">Build a beautiful photo timeline for each plant and watch its journey unfold over months and years. Capture health reports, new roots, spikes, and blooms as a visual journal, not an alarm log.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Track growth, spikes, and diagnoses over time
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                100% private, local-first scrapbook
+              </li>
+            </ul>
+          </div>
+          <div class="feature-visual device-container">
+            <div class="iphone-17-pro">
+              <div class="phone-screen">
+                <div class="dynamic-island"></div>
+                <div class="phone-content">
+                  <img src="screenshots/shot_191448.webp" width="640" height="1386" loading="lazy" decoding="async" alt="Laelia growth journal — a photo timeline of one orchid over time">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: Celebrate the rebloom (Peak / Serif moment) -->
+        <div class="feature-row reverse reveal">
+          <div class="feature-text">
+            <span class="feature-icon-badge" style="background: rgba(255, 209, 102, 0.18); color: #7B3F9E;">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+              Celebrate the rebloom
+            </span>
+            <h2 class="rebloom-serif-title">Celebrate the rebloom.</h2>
+            <p class="feature-description">The whole reason we grow orchids. Laelia supports your orchid's spike development and gives you a genuine celebration when the bloom finally arrives. Pride and joy, not chore and diagnosis.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Spike growth tracking and care tips
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+                Vibrant in-app celebratory milestones
+              </li>
+            </ul>
+          </div>
+
+          <!-- CSS Animation Mockup for Rebloom Celebration -->
+          <div class="feature-visual device-container">
+            <div class="iphone-17-pro">
+              <div class="phone-screen">
+                <div class="dynamic-island"></div>
+                <div class="phone-content celebration-bg">
+                  <!-- Confetti particles -->
+                  <div class="petals-container" aria-hidden="true">
+                    <div class="petal" style="left:10%; width:12px; height:18px; animation-delay: 0s; animation-duration: 5.5s;"></div>
+                    <div class="petal" style="left:30%; width:8px; height:8px; animation-delay: 1.5s; animation-duration: 6s;"></div>
+                    <div class="petal" style="left:45%; width:14px; height:12px; animation-delay: 0.5s; animation-duration: 4.5s;"></div>
+                    <div class="petal" style="left:60%; width:10px; height:15px; animation-delay: 2.5s; animation-duration: 5s;"></div>
+                    <div class="petal" style="left:75%; width:9px; height:9px; animation-delay: 1.2s; animation-duration: 6.5s;"></div>
+                    <div class="petal" style="left:85%; width:15px; height:16px; animation-delay: 0.2s; animation-duration: 4.8s;"></div>
+                    <div class="petal" style="left:20%; width:10px; height:14px; animation-delay: 3s; animation-duration: 5.8s;"></div>
+                    <div class="petal" style="left:50%; width:7px; height:12px; animation-delay: 4s; animation-duration: 6.2s;"></div>
+                  </div>
+
+                  <!-- Mockup App Celebration Card -->
+                  <div class="bloom-card-graphic">
+                    <span class="bloom-badge">🎉 Rebloom!</span>
+                    <h4 class="bloom-plant-title">My Phalaenopsis</h4>
+                    <p class="bloom-plant-sub">Orchid #1 · Jenny</p>
+                    <p class="bloom-celebration-message">Congratulations! The spike has flowered. Enjoy the fruits of your care! 🌸</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Privacy & No-Subscription Band -->
+    <section class="privacy-band cv-auto" id="privacy" aria-labelledby="privacy-heading">
+      <div class="container">
+        <div class="glass-panel privacy-card reveal">
+          <div class="privacy-content">
+            <h2 class="privacy-title" id="privacy-heading">Privacy is literal here, not marketing.</h2>
+            <p class="privacy-body">Your collection lives on your device — every name, journal entry, and growth photo stays on your phone. The only thing that ever leaves is a photo you choose to send for a read, sent anonymously with location and metadata stripped, never stored, never used to train AI. No account. No login. No tracking. No ads.</p>
+          </div>
+          <div class="privacy-stats">
+            <div class="privacy-stat-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              Pay once. Yours forever.
+            </div>
+            <div class="privacy-stat-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              No subscription, ever.
+            </div>
+            <div class="privacy-stat-pill">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              No account. No tracking.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Orchid Care, Answered (SEO / GEO content) -->
+    <section class="care cv-auto" id="orchid-care" aria-labelledby="care-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Orchid care, answered</span>
+          <h2 id="care-heading">The orchid basics, the way Laelia teaches them</h2>
+          <p class="section-subtitle">Healthy orchids come from reading the plant, not following a rigid calendar. Here are the fundamentals — the same observation-first approach the app guides you through.</p>
+        </div>
+
+        <div class="care-grid">
+          <article class="glass-card care-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.3" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3.5s6 6.5 6 10.5a6 6 0 11-12 0c0-4 6-10.5 6-10.5z" />
+              </svg>
+            </div>
+            <h3>Watering: read the roots, not the calendar</h3>
+            <p>Healthy orchid roots are plump and silvery-green, turning bright green just after watering. <strong>Water when the roots look silvery and the bark mix is nearly dry</strong> — not on a fixed weekly schedule. Overwatering is the most common cause of root rot.</p>
+          </article>
+
+          <article class="glass-card care-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.3" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36 6.36l-1.42-1.42M7.05 7.05 5.64 5.64m12.72 0-1.41 1.41M7.05 16.95l-1.41 1.41M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3>Light: bright, but indirect</h3>
+            <p>Most Phalaenopsis and Oncidium thrive in <strong>bright, indirect light</strong> — an east-facing window is ideal; Cattleya and Vanda take more. Dark, floppy leaves mean too little light; red-tinged or bleached leaves mean too much.</p>
+          </article>
+
+          <article class="glass-card care-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.3" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.5 12S5.5 5.5 12 5.5 21.5 12 21.5 12 18.5 18.5 12 18.5 2.5 12 2.5 12z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <h3>Reading leaves &amp; spikes</h3>
+            <p>Firm, upright leaves and a glossy growing tip signal a happy plant; <strong>wrinkled leaves usually mean a water or root problem</strong>. Learn to tell a flower spike (flattened, mitten-shaped tip) from a root (rounded, green tip) — the spike is your future bloom.</p>
+          </article>
+
+          <article class="glass-card care-card reveal">
+            <div class="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.3" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <h3>Encouraging a rebloom</h3>
+            <p>After flowering, keep care steady with bright indirect light. <strong>A modest night-time temperature drop of about 5–8°C (10–15°F) for a few weeks</strong> often triggers a new Phalaenopsis spike. Don't cut a green, healthy spike — patience beats forcing.</p>
+          </article>
+        </div>
+
+        <p class="care-note">Laelia turns these signals into a clear, honest read for your specific plant — with the confidence level always shown.</p>
+      </div>
+    </section>
+
+    <!-- Founder's Note -->
+    <section class="founder cv-auto" aria-labelledby="founder-heading">
+      <div class="container">
+        <div class="glass-panel founder-card reveal">
+          <h2 id="founder-heading" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">A note from the maker</h2>
+          <p class="founder-quote">"I built Laelia because every plant app treated my orchids like generic houseplants — barking <span class="text-gradient">'water now'</span> on a fixed schedule. Orchids don't work that way. Laelia teaches you to read the plant, keeps everything private, and never asks for a subscription. It's the app I wanted for my own windowsill."</p>
+          <div class="founder-sign">— The maker of Laelia</div>
+          <div class="founder-role">PigloBoutique Ltd · An indie studio</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Clarity Section -->
+    <section class="pricing cv-auto" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="glass-card pricing-card reveal">
+          <h2 class="pricing-title" id="pricing-heading">Simple, honest pricing</h2>
+
+          <div class="pricing-tiers">
+            <!-- Free Tier -->
+            <div class="pricing-tier">
+              <div class="tier-header">
+                <span class="tier-name">Free</span>
+                <span class="tier-price">$0 <span class="tier-price-sub">forever</span></span>
+              </div>
+              <p>Track up to 2 orchids with the full app experience: genus ID, diagnosis readings, species-specific care, and the growth journal.</p>
+              <ul class="tier-features">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  Track up to 2 orchids
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  Read-my-plant diagnosis
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  Full genus identification
+                </li>
+              </ul>
+            </div>
+
+            <!-- Paid Tier -->
+            <div class="pricing-tier featured">
+              <span class="tier-flag">Best value</span>
+              <div class="tier-header">
+                <span class="tier-name">Lifetime Unlock</span>
+                <span class="tier-price">$29.99 <span class="tier-price-sub">one-time</span></span>
+              </div>
+              <p>One payment for unlimited orchids, supporting your whole collection. No subscriptions, ever. Restore on all your Apple devices.</p>
+              <ul class="tier-features">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  Unlimited orchid capacity
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  Pay once — no renewals, ever
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+                  Supports independent development
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pricing-cta">
+            <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&amp;itsct=apps_box_link&amp;mttnsubad=6782402415" class="app-store-badge" aria-label="Download Laelia on the App Store">
+              <img src="assets/black.svg" alt="Download on the App Store" width="156" height="52">
             </a>
-            <!-- Desktop only QR code to bridge download -->
-            <div class="desktop-qr-badge">
-              <img src="assets/qr-code.png" alt="Laelia App Store QR Code">
-              <div class="qr-caption">Scan QR Code<br>to download</div>
-            </div>
-          </div>
-          
-          <div class="hero-trust-chips">
-            <div class="trust-chip">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              <span>No subscription, ever</span>
-            </div>
-            <div class="trust-chip">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              <span>Your data stays on your phone</span>
-            </div>
+            <span class="pricing-note">Free to download · Lifetime Unlock available in-app on iPhone</span>
           </div>
         </div>
-
-        <div class="hero-meta">Free to try · One-time Lifetime unlock · iPhone</div>
       </div>
-      
-      <!-- Interactive Video Mockup -->
-      <div class="device-container">
-        <div class="iphone-17-pro">
-          <div class="phone-screen">
-            <div class="dynamic-island"></div>
-            <div class="phone-content">
-              <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="screenshots/video_poster.webp">
-                <source src="screenshots/Laelia_hero.mp4" type="video/mp4">
-                <source src="screenshots/Laelia_hero.webm" type="video/webm">
-                Your browser does not support the video tag.
-              </video>
-              <button class="video-overlay" id="video-control" aria-label="Toggle playback">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" id="play-icon" style="display:none;">
-                  <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" id="pause-icon">
-                  <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
-                </svg>
+    </section>
+
+    <!-- FAQ (AEO) -->
+    <section class="faq cv-auto" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Questions &amp; answers</span>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <p class="section-subtitle">Everything about the app, pricing, privacy — and a few orchid-care basics.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+                Is Laelia free?
+                <span class="faq-icon" aria-hidden="true"></span>
               </button>
+            </h3>
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <div class="faq-answer-inner">
+                <p>Yes. Laelia is free to download and free to use for up to 2 orchids, with the full experience: orchid ID, the read-my-plant diagnosis, genus-aware care, and the growth journal. A one-time $29.99 Lifetime Unlock adds unlimited orchids. There is no subscription.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- The Wedge Section -->
-  <section class="wedge" id="why-laelia">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Not another plant scheduler</span>
-        <h2>Why Laelia is different</h2>
-        <p class="section-subtitle">Most plant apps treat orchids like desert cacti or generic houseplants. Laelia is built from the ground up for the unique needs of orchid enthusiasts.</p>
-      </div>
-
-      <div class="wedge-grid">
-        <div class="glass-card wedge-card reveal">
-          <div class="wedge-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+                Does Laelia have a subscription?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <div class="faq-answer-inner">
+                <p>No. Laelia never charges a subscription. The only paid option is a single one-time $29.99 Lifetime Unlock for unlimited orchids — pay once and it's yours, restorable across your Apple devices.</p>
+              </div>
+            </div>
           </div>
-          <h3 class="wedge-title">Teach, don't oracle</h3>
-          <p>Laelia shows you what it sees, what it likely means, how to confirm it, and how confident it is — instead of barking "water now."</p>
-        </div>
 
-        <div class="glass-card wedge-card reveal">
-          <div class="wedge-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+                Which orchids can Laelia identify and care for?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <div class="faq-answer-inner">
+                <p>Laelia provides genus-aware care for popular orchids including Phalaenopsis, Cattleya, Dendrobium, Vanda, and Oncidium, and identifies the likely genus and species from a photo with honestly calibrated uncertainty.</p>
+              </div>
+            </div>
           </div>
-          <h3 class="wedge-title">Observation, not a calendar</h3>
-          <p>Rigid "water every Tuesday" reminders are what kill orchids. Laelia helps you read the plant, not obey an alarm.</p>
-        </div>
 
-        <div class="glass-card wedge-card reveal">
-          <div class="wedge-icon-box">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+                Is my data private?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <div class="faq-answer-inner">
+                <p>Yes — privacy is literal here. Your collection, names, journal entries, and growth photos stay on your device. A photo you send for a read is sent anonymously with location and metadata stripped, is never stored, and is never used to train AI. No account, no tracking, no ads.</p>
+              </div>
+            </div>
           </div>
-          <h3 class="wedge-title">Built for enthusiasts</h3>
-          <p>Care that actually differs by genus — Phalaenopsis, Cattleya, Dendrobium, Vanda, Oncidium — not one generic schedule.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Feature Highlights -->
-  <section class="features" id="features">
-    <div class="container">
-      
-      <!-- Feature 1: Read my plant -->
-      <div class="feature-row reveal">
-        <div class="feature-text">
-          <span class="feature-icon-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Read my plant
-          </span>
-          <h2 class="feature-title">An honest, expert read of your plant.</h2>
-          <p class="feature-description">Photograph roots, leaves, or a spike for an expert read: what's there, what it likely means, how to confirm, and what to do. Confidence is always displayed honestly, never faked.</p>
-          <ul class="feature-bullets">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Diagnose roots, leaves, spikes, or the whole plant
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Shows its confidence — and admits when it's unsure
-            </li>
-          </ul>
-        </div>
-        <div class="feature-visual device-container">
-          <div class="iphone-17-pro">
-            <div class="phone-screen">
-              <div class="dynamic-island"></div>
-              <div class="phone-content">
-                <img src="screenshots/shot_191431.webp" width="640" height="1385" loading="lazy" decoding="async" alt="Laelia diagnosis screen — choosing roots, leaves, or spike for a read">
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+                Does Laelia work on Android?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+              <div class="faq-answer-inner">
+                <p>Not yet. Laelia is currently available for iPhone on the App Store.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+                How does the read-my-plant diagnosis work?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+              <div class="faq-answer-inner">
+                <p>Photograph the roots, leaves, or a flower spike. Laelia shows you what it sees, what it likely means, how to confirm it, and what to do — and always displays how confident it is instead of bluffing.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+                How often should I water an orchid?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+              <div class="faq-answer-inner">
+                <p>Water by observation, not a fixed schedule. For most Phalaenopsis, water when the bark mix is nearly dry and the roots look silvery rather than green. Watering on a rigid weekly calendar is the most common cause of orchid root rot.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item" data-open="false">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+                How do I get my orchid to rebloom?
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8">
+              <div class="faq-answer-inner">
+                <p>Keep the plant healthy with bright, indirect light and steady care. Many Phalaenopsis are nudged into a new spike by a slight night-time temperature drop of about 5–8°C (10–15°F) for a few weeks. Laelia tracks spike development and celebrates the bloom.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Feature 2: Orchid ID -->
-      <div class="feature-row reverse reveal">
-        <div class="feature-text">
-          <span class="feature-icon-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            Orchid ID
-          </span>
-          <h2 class="feature-title">Genus and species identification.</h2>
-          <p class="feature-description">Snap a photo for the likely genus and species, calibrated with uncertainty. It never bluffs a cultivar—you get clear, honest guidance on what your orchid is and how to verify it.</p>
-          <ul class="feature-bullets">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Differentiates care routines by genus
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Clear, honest ways to confirm what you've got
-            </li>
-          </ul>
-        </div>
-        <div class="feature-visual device-container">
-          <div class="iphone-17-pro">
-            <div class="phone-screen">
-              <div class="dynamic-island"></div>
-              <div class="phone-content">
-                <img src="screenshots/shot_191345.webp" width="640" height="1385" loading="lazy" decoding="async" alt="Laelia add-orchid screen with genus picker">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feature 3: Growth journal -->
-      <div class="feature-row reveal">
-        <div class="feature-text">
-          <span class="feature-icon-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-            Growth journal
-          </span>
-          <h2 class="feature-title">Your orchid's scrapbook.</h2>
-          <p class="feature-description">Build a beautiful photo timeline for each plant and watch its journey unfold over months and years. Capture health reports, new roots, spikes, and blooms as a visual journal, not an alarm log.</p>
-          <ul class="feature-bullets">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Track growth, spikes, and diagnoses over time
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              100% private, local-first scrapbook
-            </li>
-          </ul>
-        </div>
-        <div class="feature-visual device-container">
-          <div class="iphone-17-pro">
-            <div class="phone-screen">
-              <div class="dynamic-island"></div>
-              <div class="phone-content">
-                <img src="screenshots/shot_191448.webp" width="640" height="1385" loading="lazy" decoding="async" alt="Laelia growth journal — a photo timeline of one orchid over time">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feature 4: Celebrate the rebloom (Peak / Serif moment) -->
-      <div class="feature-row reverse reveal">
-        <div class="feature-text">
-          <span class="feature-icon-badge" style="background: rgba(255, 209, 102, 0.15); color: #7B3F9E;">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
-            Celebrate the rebloom
-          </span>
-          <h2 class="rebloom-serif-title">Celebrate the rebloom.</h2>
-          <p class="feature-description">The whole reason we grow orchids. Laelia supports your orchid’s spike development and gives you a genuine celebration when the bloom finally arrives. Pride and joy, not chore and diagnosis.</p>
-          <ul class="feature-bullets">
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Spike growth tracking and care tips
-            </li>
-            <li>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-              </svg>
-              Vibrant in-app celebratory milestones
-            </li>
-          </ul>
-        </div>
-        
-        <!-- CSS Animation Mockup for Rebloom Celebration -->
-        <div class="feature-visual device-container">
-          <div class="iphone-17-pro">
-            <div class="phone-screen">
-              <div class="dynamic-island"></div>
-              <div class="phone-content celebration-bg">
-                <!-- Confetti particles -->
-                <div class="petals-container">
-                  <div class="petal" style="left:10%; width:12px; height:18px; animation-delay: 0s; animation-duration: 5.5s;"></div>
-                  <div class="petal" style="left:30%; width:8px; height:8px; animation-delay: 1.5s; animation-duration: 6s;"></div>
-                  <div class="petal" style="left:45%; width:14px; height:12px; animation-delay: 0.5s; animation-duration: 4.5s;"></div>
-                  <div class="petal" style="left:60%; width:10px; height:15px; animation-delay: 2.5s; animation-duration: 5s;"></div>
-                  <div class="petal" style="left:75%; width:9px; height:9px; animation-delay: 1.2s; animation-duration: 6.5s;"></div>
-                  <div class="petal" style="left:85%; width:15px; height:16px; animation-delay: 0.2s; animation-duration: 4.8s;"></div>
-                  <div class="petal" style="left:20%; width:10px; height:14px; animation-delay: 3s; animation-duration: 5.8s;"></div>
-                  <div class="petal" style="left:50%; width:7px; height:12px; animation-delay: 4s; animation-duration: 6.2s;"></div>
-                </div>
-                
-                <!-- Mockup App Celebration Card -->
-                <div class="bloom-card-graphic">
-                  <span class="bloom-badge">🎉 Rebloom!</span>
-                  <h4 class="bloom-plant-title">My Phalaenopsis</h4>
-                  <p class="bloom-plant-sub">Orchid #1 · Jenny</p>
-                  <p class="bloom-celebration-message">Congratulations! The spike has flowered. Enjoy the fruits of your care! 🌸</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Privacy & No-Subscription Band -->
-  <section class="privacy-band">
-    <div class="container">
-      <div class="glass-panel privacy-card reveal">
-        <div class="privacy-content">
-          <h2 class="privacy-title">Privacy is literal here, not marketing.</h2>
-          <p class="privacy-body">Your collection lives on your device — every name, journal entry, and growth photo stays on your phone. The only thing that ever leaves is a photo you choose to send for a read, sent anonymously with location and metadata stripped, never stored, never used to train AI. No account. No login. No tracking. No ads.</p>
-        </div>
-        <div class="privacy-stats">
-          <div class="privacy-stat-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-            Pay once. Yours forever.
-          </div>
-          <div class="privacy-stat-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            No subscription, ever.
-          </div>
-          <div class="privacy-stat-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-            No account. No tracking.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Clarity Section -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="glass-card pricing-card reveal">
-        <h2 class="pricing-title">Simple, Honest Pricing</h2>
-        
-        <div class="pricing-tiers">
-          <!-- Free Tier -->
-          <div class="pricing-tier">
-            <div class="tier-header">
-              <span class="tier-name">Free</span>
-              <span class="tier-price">Free Forever</span>
-            </div>
-            <p>Track up to 2 orchids with the full app experience: Genus ID, diagnosis readings, species-specific care, and the growth journal.</p>
-            <ul class="tier-features">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-                Track up to 2 orchids
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-                Read-my-plant diagnosis
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-                Full Genus Identification
-              </li>
-            </ul>
-          </div>
-          
-          <!-- Paid Tier -->
-          <div class="pricing-tier" style="border: 2px solid var(--color-primary); background: rgba(255,255,255,0.6);">
-            <div class="tier-header">
-              <span class="tier-name" style="color: var(--color-primary);">Lifetime Unlock</span>
-              <span class="tier-price">One-time Unlock</span>
-            </div>
-            <p>One payment for unlimited orchids, supporting your whole orchid collection. No subscriptions ever. Restore on all your Apple devices.</p>
-            <ul class="tier-features">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-                Unlimited orchid capacity
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-                Supports indie development
-              </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-                Pay once — no renewals, ever
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="pricing-cta">
-          <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&itsct=apps_box_link&mttnsubad=6782402415" class="app-store-badge">
-            <img src="assets/black.svg" alt="Download on the App Store">
+    <!-- Final Call to Action -->
+    <section class="final-cta cv-auto" aria-labelledby="final-cta-heading">
+      <div class="container">
+        <div class="glass-panel final-cta-card reveal">
+          <h2 class="final-cta-title" id="final-cta-heading">Your orchids deserve to be understood.</h2>
+          <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&amp;itsct=apps_box_link&amp;mttnsubad=6782402415" class="final-cta-badge app-store-badge" aria-label="Download Laelia on the App Store">
+            <img src="assets/black.svg" alt="Download on the App Store" width="156" height="54">
           </a>
-          <span class="pricing-note">Unlockable directly in-app on iOS.</span>
+          <p class="final-cta-sub">Free to try · No subscription, ever · iPhone</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Final Call to Action -->
-  <section class="final-cta">
-    <div class="container">
-      <div class="glass-panel final-cta-card reveal">
-        <h2 class="final-cta-title">Your orchids deserve to be understood.</h2>
-        <a href="https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415?itscg=30200&itsct=apps_box_link&mttnsubad=6782402415" class="final-cta-badge app-store-badge">
-          <img src="assets/black.svg" style="height: 52px;" alt="Download on the App Store">
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -497,19 +835,21 @@
           <span class="footer-logo">Laelia</span>
           <span class="footer-tagline">Pride and joy, not chore and diagnosis.</span>
         </div>
-        <div class="footer-links">
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#orchid-care">Orchid care</a>
+          <a href="#faq">FAQ</a>
           <a href="https://www.pigloboutique.com/#/privacy" target="_blank" rel="noopener">Privacy Policy</a>
           <a href="mailto:info@piglo.net">Support</a>
           <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Use</a>
-        </div>
+        </nav>
       </div>
       <div class="footer-maker">
-        An indie app. Made with care.
+        An indie app, made with care by <a href="https://www.pigloboutique.com/" target="_blank" rel="noopener">PigloBoutique Ltd</a>.
       </div>
     </div>
   </footer>
 
   <!-- JS -->
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </body>
 </html>

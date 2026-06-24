@@ -1,0 +1,40 @@
+# Laelia — Orchid Care & ID
+
+> Laelia is a private iOS app that helps orchid lovers read their plant's health, identify
+> its genus and species, keep a growth journal, and celebrate every rebloom. It is built for
+> orchid enthusiasts — not generic houseplant owners. Free to try, with a one-time $29.99
+> Lifetime Unlock and no subscription ever.
+
+## What Laelia does
+
+- **Read my plant.** Photograph roots, leaves, or a flower spike for an honest, expert read:
+  what's there, what it likely means, how to confirm it, and what to do. Confidence is always
+  shown honestly and never faked.
+- **Orchid ID.** Identify the likely genus and species from a photo, with calibrated
+  uncertainty. It never bluffs a cultivar.
+- **Growth journal.** A private photo timeline for each plant — track new roots, spikes,
+  blooms, and health reports over months and years.
+- **Celebrate the rebloom.** Spike-development support and a genuine in-app celebration when
+  the bloom finally arrives. Pride and joy, not chore and diagnosis.
+
+## Key facts
+
+- **Platform:** iPhone (iOS).
+- **Download:** https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415
+- **Price:** Free to try (track up to 2 orchids). The Lifetime Unlock is a one-time **$29.99**
+  purchase for unlimited orchids. No subscription, ever.
+- **Privacy:** Local-first. Your collection, names, journal entries, and growth photos stay on
+  your device. A photo you choose to send for a read is sent anonymously with location and
+  metadata stripped, is never stored, and is never used to train AI. No account, no login, no
+  tracking, no ads.
+- **Genus-aware care** for Phalaenopsis, Cattleya, Dendrobium, Vanda, Oncidium, and more.
+- **Philosophy:** Observation over rigid calendars. Teach, don't oracle. Most plant apps treat
+  orchids like generic houseplants or cacti; Laelia is built specifically for orchids.
+- **Maker:** PigloBoutique Ltd — https://www.pigloboutique.com/. Support: info@piglo.net
+
+## Links
+
+- Home: https://laelia.app
+- App Store: https://apps.apple.com/us/app/laelia-orchid-care-id/id6782402415
+- Privacy policy: https://www.pigloboutique.com/#/privacy
+- Maker: https://www.pigloboutique.com/
